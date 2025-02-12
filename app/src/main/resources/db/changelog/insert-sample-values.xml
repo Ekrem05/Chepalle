@@ -149,11 +149,4 @@
         </insert>
 
     </changeSet>
-    <changeSet id="14" author="Ekrem">
-        <insert tableName="tyre">
-            <column name="diameter" value="20"/>
-            <column name="width" value="235"/>
-            <column name="height" value="30"/>
-        </insert>
-    </changeSet>
 </databaseChangeLog>
