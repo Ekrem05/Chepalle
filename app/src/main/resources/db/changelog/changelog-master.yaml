@@ -11,3 +11,5 @@ databaseChangeLog:
       file: db/changelog/create-tyres.xml
   - include:
       file: db/changelog/create-join-tables.xml
+  - include:
+      file: db/changelog/insert-sample-values.xml

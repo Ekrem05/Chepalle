@@ -17,4 +17,19 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="2" author="Ekrem">
+        <addColumn tableName="sizes">
+            <column name="diameter" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="width" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="height" type="int">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <dropColumn tableName="sizes" columnName="description"/>
+        <dropColumn tableName="sizes" columnName="name"/>
+    </changeSet>
 </databaseChangeLog>
