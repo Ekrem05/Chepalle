@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+
+    <changeSet id="9" author="Ekrem">
+        <!-- Insert into families -->
+        <insert tableName="families">
+            <column name="name" value="AERO-R"/>
+            <column name="description" value="High-performance tyres, inspired by aerodynamics and racing"/>
+        </insert>
+        <insert tableName="families">
+            <column name="name" value="POWERGY"/>
+            <column name="description" value="Smart, safe, efficient, for everyday usage"/>
+        </insert>
+        <insert tableName="families">
+            <column name="name" value="CARRIER"/>
+            <column name="description" value="Durable, safe, and efficient tires for vans"/>
+        </insert>
+        <insert tableName="families">
+            <column name="name" value="ICE"/>
+            <column name="description" value="Designed for extreme winter conditions"/>
+        </insert>
+        <insert tableName="families">
+            <column name="name" value="TERRAMAX"/>
+            <column name="description" value="Rugged, durable, and versatile all-terrain tires"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="10" author="Ekrem">
+        <!-- Insert into types -->
+        <insert tableName="types">
+            <column name="name" value="Car"/>
+        </insert>
+        <insert tableName="types">
+            <column name="name" value="SUV"/>
+        </insert>
+        <insert tableName="types">
+            <column name="name" value="EV"/>
+        </insert>
+        <insert tableName="types">
+            <column name="name" value="Motorcycle"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="11" author="Ekrem">
+        <!-- Insert into seasons -->
+        <insert tableName="seasons">
+            <column name="name" value="ALL-season"/>
+        </insert>
+        <insert tableName="seasons">
+            <column name="name" value="Winter"/>
+        </insert>
+        <insert tableName="seasons">
+            <column name="name" value="Summer"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="12" author="Ekrem">
+        <!-- Insert into technologies -->
+        <insert tableName="technologies">
+            <column name="name" value="PNCS"/>
+            <column name="description" value="You can reduce the noise in your car by half with PNCS"/>
+        </insert>
+        <insert tableName="technologies">
+            <column name="name" value="RUN FLAT"/>
+            <column name="description" value="You can drive safely even during a rapid loss of inflation pressure with RUN FLAT"/>
+        </insert>
+        <insert tableName="technologies">
+            <column name="name" value="ELECT"/>
+            <column name="description" value="Tyre technology for your electric and plug-in hybrid car"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="13" author="Ekrem">
+        <insert tableName="sizes">
+            <column name="diameter" value="14"/>
+            <column name="width" value="175"/>
+            <column name="height" value="60"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="14"/>
+            <column name="width" value="185"/>
+            <column name="height" value="60"/>
+
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="14"/>
+            <column name="width" value="195"/>
+            <column name="height" value="55"/>
+
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="14"/>
+            <column name="width" value="175"/>
+            <column name="height" value="55"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="17"/>
+            <column name="width" value="175"/>
+            <column name="height" value="60"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="17"/>
+            <column name="width" value="195"/>
+            <column name="height" value="50"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="17"/>
+            <column name="width" value="195"/>
+            <column name="height" value="55"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="18"/>
+            <column name="width" value="195"/>
+            <column name="height" value="60"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="18"/>
+            <column name="width" value="205"/>
+            <column name="height" value="60"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="18"/>
+            <column name="width" value="225"/>
+            <column name="height" value="50"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="18"/>
+            <column name="width" value="235"/>
+            <column name="height" value="45"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="19"/>
+            <column name="width" value="235"/>
+            <column name="height" value="40"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="20"/>
+            <column name="width" value="235"/>
+            <column name="height" value="35"/>
+        </insert>
+        <insert tableName="sizes">
+            <column name="diameter" value="20"/>
+            <column name="width" value="235"/>
+            <column name="height" value="30"/>
+        </insert>
+
+    </changeSet>
+    <changeSet id="14" author="Ekrem">
+        <insert tableName="tyre">
+            <column name="diameter" value="20"/>
+            <column name="width" value="235"/>
+            <column name="height" value="30"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
