@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/create-family.xml
+  - include:
+      file: db/changelog/create-sizes.xml
+  - include:
+      file: db/changelog/create-technology.xml
+  - include:
+      file: db/changelog/create-types-and-seasons.xml
+  - include:
+      file: db/changelog/create-tyres.xml
+  - include:
+      file: db/changelog/create-join-tables.xml

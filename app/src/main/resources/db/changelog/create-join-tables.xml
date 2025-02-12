@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+    <changeSet id="1" author="Ekrem">
+        <createTable tableName="tyre_size">
+            <column name="tyre_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="size_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="">
+        <addPrimaryKey columnNames="tyre_id, size_id" constraintName="pk_tyre_size" tableName="tyre_size"/>
+        <addForeignKeyConstraint baseColumnNames="tyre_id"
+                                 baseTableName="tyre_size"
+                                 constraintName="fk_tyre_size_tyre"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tyres"/>
+        <addForeignKeyConstraint baseColumnNames="size_id"
+                                 baseTableName="tyre_size"
+                                 constraintName="fk_tyre_size_size"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sizes"/>
+    </changeSet>
+
+    <changeSet id="3" author="Ekrem">
+        <createTable tableName="tyre_type">
+            <column name="tyre_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="">
+        <addPrimaryKey columnNames="tyre_id, type_id" constraintName="pk_tyre_type" tableName="tyre_type"/>
+        <addForeignKeyConstraint baseColumnNames="tyre_id"
+                                 baseTableName="tyre_type"
+                                 constraintName="fk_tyre_type_tyre"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tyres"/>
+        <addForeignKeyConstraint baseColumnNames="type_id"
+                                 baseTableName="tyre_type"
+                                 constraintName="fk_tyre_type_type"
+                                 referencedColumnNames="id"
+                                 referencedTableName="types"/>
+    </changeSet>
+
+    <changeSet id="5" author="Ekrem">
+        <createTable tableName="tyre_season">
+            <column name="tyre_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="season_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+    <changeSet id="6" author="">
+        <addPrimaryKey columnNames="tyre_id, season_id" constraintName="pk_tyre_season" tableName="tyre_season"/>
+        <addForeignKeyConstraint baseColumnNames="tyre_id"
+                                 baseTableName="tyre_season"
+                                 constraintName="fk_tyre_season_tyre"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tyres"/>
+        <addForeignKeyConstraint baseColumnNames="season_id"
+                                 baseTableName="tyre_season"
+                                 constraintName="fk_tyre_season_season"
+                                 referencedColumnNames="id"
+                                 referencedTableName="seasons"/>
+    </changeSet>
+
+    <changeSet id="7" author="Ekrem">
+        <createTable tableName="tyre_technology">
+            <column name="tyre_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="technology_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+    <changeSet id="8" author="">
+        <addPrimaryKey columnNames="tyre_id, technology_id" constraintName="pk_tyre_technology" tableName="tyre_technology"/>
+        <addForeignKeyConstraint baseColumnNames="tyre_id"
+                                 baseTableName="tyre_technology"
+                                 constraintName="fk_tyre_technology_tyre"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tyres"/>
+        <addForeignKeyConstraint baseColumnNames="technology_id"
+                                 baseTableName="tyre_technology"
+                                 constraintName="fk_tyre_technology_technology"
+                                 referencedColumnNames="id"
+                                 referencedTableName="technologies"/>
+    </changeSet>
+</databaseChangeLog>
