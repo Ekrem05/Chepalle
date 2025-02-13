@@ -1,32 +1,37 @@
 package org.example.model.entity.tyre;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity(name = "sizes")
-public class TyreSize {
+public class Size {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private int width;
     private int height;
     private int diameter;
 
-    public TyreSize() {
+    @ManyToMany(mappedBy = "sizes", fetch = FetchType.LAZY)
+    private Set<Tyre> tyres;
+
+    public Size() {
     }
 
-    public TyreSize(int width, int height, int diameter) {
+    public Size(int width, int height, int diameter) {
         this.width = width;
         this.height = height;
         this.diameter = diameter;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -52,5 +57,9 @@ public class TyreSize {
 
     public void setDiameter(int diameter) {
         this.diameter = diameter;
+    }
+
+    public Set<Tyre> getTyres() {
+        return tyres;
     }
 }
