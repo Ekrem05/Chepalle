@@ -12,28 +12,22 @@
             <column name="model" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="family" type="int">
+            <column name="family_id" type="int">
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="text">
                 <constraints nullable="false"/>
             </column>
-            <column name="type" type="int">
+            <column name="season_id" type="int">
                 <constraints nullable="false"/>
             </column>
-            <column name="season" type="int">
-                <constraints nullable="false"/>
-            </column>
-            <column name="technologies" type="int">
-                <constraints nullable="false"/>
-            </column>
-            <column name="sizes" type="int">
+            <column name="technology_id" type="int">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
     <changeSet id="2" author="">
-        <addForeignKeyConstraint baseTableName="tyres" baseColumnNames="family"
+        <addForeignKeyConstraint baseTableName="tyres" baseColumnNames="family_id"
                                  constraintName="family_fk"
                                  referencedTableName="families" referencedColumnNames="id"/>
     </changeSet>
