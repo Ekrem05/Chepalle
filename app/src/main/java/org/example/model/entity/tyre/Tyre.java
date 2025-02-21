@@ -13,17 +13,24 @@ public class Tyre {
 
     private String model;
     private String description;
+    private Long price;
+
+    @Column(name="stripe_id")
+    private String stripeId;
+
+    @Column(name="stripe_price_id")
+    private String stripePriceId;
 
     @ManyToOne
-    @JoinColumn(name = "family_id", nullable = false)
+    @JoinColumn(name = "family_id")
     private Family family;
 
     @ManyToOne
-    @JoinColumn(name = "season_id", nullable = false)
+    @JoinColumn(name = "season_id")
     private Season season;
 
     @ManyToOne
-    @JoinColumn(name="technology_id",nullable = false)
+    @JoinColumn(name="technology_id")
     private Technology technology ;
 
 
@@ -47,6 +54,9 @@ public class Tyre {
     }
 
     public Tyre(String model, String description,
+                Long price,
+                String stripeId,
+                String stripePriceId,
                 Family family,
                 Season season,
                 Technology technology,
@@ -54,6 +64,9 @@ public class Tyre {
                 Set<Type> types) {
         this.model = model;
         this.description = description;
+        this.price=price;
+        this.stripeId=stripeId;
+        this.stripePriceId=stripePriceId;
         this.family = family;
         this.season = season;
         this.technology = technology;

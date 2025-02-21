@@ -31,4 +31,22 @@
                                  constraintName="family_fk"
                                  referencedTableName="families" referencedColumnNames="id"/>
     </changeSet>
+    <changeSet id="3" author="">
+        <addColumn tableName="tyres">
+            <column name="price" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+        </addColumn>
+        <addColumn tableName="tyres">
+            <column name="stripe_id" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="tyres">
+            <column name="stripe_price_id" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
