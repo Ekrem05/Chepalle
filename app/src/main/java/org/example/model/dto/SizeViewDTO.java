@@ -1,6 +1,6 @@
 package org.example.model.dto;
 
-public record SizeViewDto(Integer width,
+public record SizeViewDTO(Integer width,
                           Integer height,
                           Integer diameter) {
 }

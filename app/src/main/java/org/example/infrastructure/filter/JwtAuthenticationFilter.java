@@ -32,10 +32,11 @@ import java.util.Map;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private static final Map<String, List<String>> PERMITTED_PATHS = new HashMap<String, List<String>>() {{
-        put("/api/tyre/**", Arrays.asList(HttpMethod.GET.name(), HttpMethod.POST.name()));
+        put("/api/tyre/**", Arrays.asList(HttpMethod.GET.name()));
         put("/api/other-endpoint/**", Arrays.asList(HttpMethod.GET.name()));
         put("/swagger-ui/**", Arrays.asList(HttpMethod.GET.name()));
         put("/v3/api-docs/**", Arrays.asList(HttpMethod.GET.name()));
+        put("/login/**",Arrays.asList(HttpMethod.GET.name()));
     }};
 
     @Value("${jwt.secret}")

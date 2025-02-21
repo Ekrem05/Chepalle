@@ -1,15 +1,14 @@
 package org.example.rest;
 
+import com.stripe.exception.StripeException;
 import jakarta.transaction.InvalidTransactionException;
-import org.example.model.dto.SizeViewDto;
+import org.example.model.dto.OrderRquestDTO;
+import org.example.model.dto.SizeViewDTO;
 import org.example.model.dto.TyreCreationDTO;
 import org.example.model.dto.TyreViewDTO;
 import org.example.service.contracts.SizeService;
 import org.example.service.contracts.TyreService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,14 +25,25 @@ public class TyreController {
     }
 
     @GetMapping("/size")
-    public List<SizeViewDto> GetSizes(){
-            List<SizeViewDto> tyres = sizeService.getAll();
-            return tyres;
+    public List<SizeViewDTO> GetSizes(){
+            List<SizeViewDTO> tyreSizes = sizeService.getAll();
+            return tyreSizes;
     }
 
     @PostMapping("/tyre")
-    public TyreViewDTO AddTyre(TyreCreationDTO dto) throws InvalidTransactionException {
+    public TyreViewDTO AddTyre(@RequestBody TyreCreationDTO dto) throws InvalidTransactionException, StripeException {
         TyreViewDTO tyre = tyreService.addNew(dto);
         return tyre;
+    }
+
+    @GetMapping("/tyres")
+    public List<TyreViewDTO> GetTyres(){
+        List<TyreViewDTO> tyres = tyreService.getAll();
+        return tyres;
+    }
+
+    @PostMapping("order")
+    public void Order(@RequestParam OrderRquestDTO order){
+
     }
 }

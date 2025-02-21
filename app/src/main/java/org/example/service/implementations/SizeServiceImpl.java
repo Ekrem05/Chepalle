@@ -1,6 +1,6 @@
 package org.example.service.implementations;
 
-import org.example.model.dto.SizeViewDto;
+import org.example.model.dto.SizeViewDTO;
 import org.example.model.entity.tyre.Size;
 import org.example.repository.SizeRepository;
 import org.example.service.contracts.SizeService;
@@ -24,8 +24,8 @@ public class SizeServiceImpl implements SizeService {
     }
 
     @Override
-    public List<SizeViewDto> getAll() {
+    public List<SizeViewDTO> getAll() {
         return repository.findAll().stream().map(size->
-                new SizeViewDto(size.getWidth(),size.getHeight(),size.getDiameter())).collect(Collectors.toList());
+                new SizeViewDTO(size.getWidth(),size.getHeight(),size.getDiameter())).collect(Collectors.toList());
     }
 }
